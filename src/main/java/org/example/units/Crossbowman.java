@@ -6,11 +6,15 @@ public class Crossbowman extends RangedCombatGroup {
 
     protected int doubleDamage;
 
-    public Crossbowman(String name) {
-        super(name, "Светлые", 6,6);
+    public Crossbowman() {
+        super("Светлые", 6,6);
         doubleDamage = attack * 2;
         attack = 6;
         arrows = 7;
         accuracy = 10;
+    }
+    @Override
+    public String getInfo() {
+        return "Арбалетчик";
     }
 }

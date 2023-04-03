@@ -1,21 +1,25 @@
 package org.example;
 import org.example.units.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
         ArrayList<BaseHero> heroes = new ArrayList<>();
-        heroes.add(new Archer("Фёдор"));
-        heroes.add(new Crossbowman("Степан"));
-        heroes.add(new Orc("Харитон"));
-        heroes.add(new Spearman("Дмитрий"));
-        heroes.add(new Monk("Феофан"));
-        heroes.add(new Mag("Яков"));
-        heroes.add(new Peasant("Джед"));
-        heroes.add(new Servant("Павел"));
 
-        for (BaseHero n : heroes) {
-            System.out.println(n);
+        for (int i = 0; i < 10; i++) {
+            switch (new Random().nextInt(8)) {
+                case 0 -> heroes.add(new Archer());
+                case 1 -> heroes.add(new Crossbowman());
+                case 2 -> heroes.add(new Orc());
+                case 3 -> heroes.add(new Spearman());
+                case 4 -> heroes.add(new Monk());
+                case 5 -> heroes.add(new Mag());
+                case 6 -> heroes.add(new Peasant());
+                default -> heroes.add(new Servant());
+            }
         }
+        heroes.forEach(n -> System.out.println(n.getInfo() + " - " + n.name));
     }
+
 }

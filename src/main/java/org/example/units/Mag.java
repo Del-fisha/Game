@@ -6,9 +6,13 @@ import org.example.groups.MagicianGroup;
 public class Mag extends MagicianGroup {
     int attack;
 
-    public Mag(String name) {
-        super(name, "Тёмные",  -6, -6);
+    public Mag() {
+        super("Тёмные",  -6, -6);
         attack = 1;
         treatment = 2;
+    }
+    @Override
+    public String getInfo() {
+        return "Маг";
     }
 }

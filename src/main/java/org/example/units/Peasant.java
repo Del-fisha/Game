@@ -4,8 +4,12 @@ import org.example.groups.SquireGroup;
 // Крестьянин наследуется от SquireGroup (+Поднос стрел) (+Атака)
 public class Peasant extends SquireGroup {
     protected int attack;
-    public Peasant(String name) {
-        super(name, "Светлые", 6, 6);
+    public Peasant() {
+        super("Светлые", 6, 6);
         attack = 1;
+    }
+    @Override
+    public String getInfo() {
+        return "Крестьянин";
     }
 }
